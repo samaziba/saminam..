@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07191d">
+<title>For my sweetheart ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Nunito:wght@500;700;800;900&display=swap');
+:root{--bg:#061316;--teal:#8ce3d8;--mint:#d8f7f0;--muted:#a8c7c2;--panel:#0c2226}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;color:#effbf8;background:radial-gradient(ellipse at 50% 0%,#19434a 0%,#0a2024 42%,#041013 100%);font-family:"Vazirmatn",sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.stars{position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(2px 2px at 15% 20%,#e7fffc 90%,transparent),radial-gradient(1px 1px at 70% 14%,#e7fffc 90%,transparent),radial-gradient(2px 2px at 83% 65%,#8ce3d8 90%,transparent),radial-gradient(1px 1px at 30% 78%,#fff 90%,transparent),radial-gradient(1px 1px at 58% 48%,#fff 90%,transparent);background-size:260px 230px;animation:twinkle 5s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:.9}}
+.celestial{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.celestial-moon,.celestial-sun,.celestial-star{position:absolute;display:block;animation:celestialGlow 5s ease-in-out infinite,celestialDrift 7s ease-in-out infinite}
+.celestial-moon{top:8%;left:8%;font-family:serif;font-size:clamp(3rem,10vw,5.4rem);color:#d9f3ef;text-shadow:0 0 24px #9ee9df77}
+.celestial-sun{top:15%;right:8%;font-size:clamp(2.7rem,8vw,4.5rem);color:#e9d6a0;text-shadow:0 0 26px #e9d6a055;animation-delay:1s}
+.celestial-star{top:10%;left:calc(50% - 8px);font-size:1.3rem;color:#b9f7ef;text-shadow:0 0 14px #a8fff3;animation-delay:.5s}
+@keyframes celestialGlow{0%,100%{opacity:.58;filter:drop-shadow(0 0 8px #8ce3d844)}50%{opacity:1;filter:drop-shadow(0 0 18px #8ce3d888)}}
+@keyframes celestialDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(max-width:520px){.celestial-moon{top:3%;left:5%;font-size:2.8rem}.celestial-sun{top:7%;right:5%;font-size:2.5rem}.celestial-star{top:4%;font-size:1rem}}
+@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.page{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:25px 16px}
+.card{width:min(480px,100%);text-align:center;border:1px solid #2c6267;border-radius:28px;padding:28px 21px 26px;background:linear-gradient(145deg,#0c272beF,#071a1eF2);box-shadow:0 22px 70px #0005;animation:pop .65s ease both}
+.pets{display:flex;justify-content:center;align-items:center;gap:17px;margin:0 auto 15px}
+.pet{font-size:clamp(4.4rem,20vw,6.2rem);line-height:1.3;filter:drop-shadow(0 8px 14px #0004);animation:bob 3s ease-in-out infinite}
+.pet:nth-child(2){animation-delay:.5s}
+.english{font-family:"Nunito",sans-serif;direction:ltr;color:var(--teal);font-size:1rem;font-weight:800;letter-spacing:.3px;margin:2px 0 8px}
+h1{font-size:clamp(1.6rem,7vw,2.15rem);line-height:1.5;margin:0 0 8px;color:#f2fffc}
+.question{font-size:1.13rem;line-height:1.9;margin:8px 0 22px;color:#d7eeea}
+.buttons{display:flex;justify-content:center;align-items:center;gap:12px;min-height:60px;direction:ltr}
+.choice{border:0;border-radius:999px;padding:12px 28px;font-weight:800;min-width:94px;transition:transform .25s ease,font-size .25s ease,padding .25s ease,opacity .25s ease}
+#yes{background:linear-gradient(135deg,#aaf4e7,#62c7bb);color:#082124;box-shadow:0 7px 24px #63d5c533;transform:scale(1)}
+#no{background:#18363a;color:#e1f4f0;border:1px solid #3d666a;transform:scale(1)}
+.hint{font-size:.82rem;color:#8fb6b1;margin:17px 0 0}
+#letterScreen{display:none}
+.letter{white-space:pre-line;text-align:right;line-height:2.2;font-size:1rem;color:#f1fbf8;border-right:2px solid var(--teal);padding:5px 14px 5px 0;margin:20px 0}
+.love-title{font-size:1.5rem;color:var(--teal);margin:0 0 8px}
+.back{background:transparent;border:1px solid #37656a;color:#cdece7;border-radius:999px;padding:8px 20px;margin-top:8px}
+.tiny-note{font-size:.78rem;color:#86aaa6;margin-top:20px}
+@media(max-width:380px){.card{padding:24px 16px}.choice{min-width:83px;padding:11px 21px}.question{font-size:1.02rem}}
+@keyframes heartRain{0%{transform:translate3d(0,-12vh,0) rotate(0deg) scale(.72);opacity:0}10%{opacity:1}100%{transform:translate3d(var(--drift,0px),110vh,0) rotate(var(--spin,360deg)) scale(1.15);opacity:0}}
+.rain-heart{position:fixed;top:-40px;left:var(--left);z-index:20;pointer-events:none;color:var(--heart-color,#ff8fb8);font-size:var(--size,24px);line-height:1;text-shadow:0 2px 12px #ff8fb855;animation:heartRain var(--duration,3.8s) linear forwards}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="celestial" aria-hidden="true"><span class="celestial-moon">☾</span><span class="celestial-star">✦</span><span class="celestial-sun">☼</span></div>
+<main class="page">
+  <section class="card" id="questionScreen" aria-labelledby="mainTitle">
+    <div class="pets" aria-label="cat and chick">
+      <span class="pet" role="img" aria-label="black cat">🐈‍⬛</span>
+      <span class="pet" role="img" aria-label="chick">🐥</span>
+    </div>
+    <p class="english">For my heart ♡</p>
+    <h1 id="mainTitle">حاضری تا آخر عمر باهام بمونی؟</h1>
+    <div class="buttons">
+      <button class="choice" id="yes" type="button">آره 💗</button>
+      <button class="choice" id="no" type="button">نه 🙈</button>
+    </div>
+    <p class="hint" id="hint">یه جواب از ته دلت بده کوچولوی من ♡</p>
+  </section>
+
+  <section class="card" id="letterScreen" aria-labelledby="letterTitle">
+    <div class="pets"><span class="pet">🐈‍⬛</span><span class="pet">🐥</span></div>
+    <p class="english">You said YES! ♡</p>
+    <h2 class="love-title" id="letterTitle">ماهگرد شیشممون مبارککک 🩵</h2>
+    <div class="letter">ثمینم ماهگرد شیشممون مبارککک 🥹🤍
+باورم نمیشه شیش ماهه که تو رو دارم.. شاید توی این مدت همیشه همه‌چی خوب نبوده دلخور شدیم از هم یا از هم دور شدیم... ولی تو هنوزم برام همون آدم مهمی هستی که دلم نمی‌خواد از دستش بدم... دلم می‌خواد تا اخر عمر کنار هم باشیمو باهم به هدفامون برسیم.. امیدوارم "ما" کلی ادامه داشته باشه دوستت دارم شیرینکم 🫂🩵</div>
+    <p class="tiny-note">برای شیرینکم، از طرف من ♡</p>
+    <button class="back" type="button" id="back">یه بار دیگه ببین ♡</button>
+  </section>
+</main>
+<script>
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+const hint = document.getElementById('hint');
+const questionScreen = document.getElementById('questionScreen');
+const letterScreen = document.getElementById('letterScreen');
+let noClicks = 0;
+function rainHearts(){
+  const colors = ['#ff7aa8','#ff9fbd','#ffc5d8','#f7e6ff','#8ce3d8','#ffffff'];
+  for(let i=0;i<150;i++){
+    const heart=document.createElement('span');
+    heart.className='rain-heart';
+    heart.textContent=Math.random()>.18?'♥':'♡';
+    heart.style.setProperty('--left',(Math.random()*100)+'vw');
+    heart.style.setProperty('--size',(14+Math.random()*24)+'px');
+    heart.style.setProperty('--duration',(2.8+Math.random()*3.2)+'s');
+    heart.style.setProperty('--drift',((Math.random()-.5)*180)+'px');
+    heart.style.setProperty('--spin',((Math.random()-.5)*900)+'deg');
+    heart.style.setProperty('--heart-color',colors[Math.floor(Math.random()*colors.length)]);
+    heart.style.animationDelay=(Math.random()*1.4)+'s';
+    document.body.appendChild(heart);
+    heart.addEventListener('animationend',()=>heart.remove(),{once:true});
+  }
+}
+no.addEventListener('click', () => {
+  noClicks++;
+  const noScale = Math.max(0.08, Math.pow(0.72, noClicks));
+  const yesScale = Math.min(2.15, 1 + noClicks * 0.16);
+  no.style.transform = `scale(${noScale})`;
+  no.style.opacity = String(Math.max(0.25, 1 - noClicks * 0.09));
+  yes.style.transform = `scale(${yesScale})`;
+  yes.style.padding = `${12 + Math.min(noClicks * 2, 16)}px ${28 + Math.min(noClicks * 4, 32)}px`;
+  const messages = ['مطمئنی؟ 🥺','یه بار دیگه فکر کن 🙈','ولی من دوست دارم پیشم بمونی 🩵','گزینه‌ی آره داره بزرگ می‌شه 😭'];
+  hint.textContent = messages[Math.min(noClicks - 1, messages.length - 1)];
+  if (noClicks >= 7) {
+    no.style.display = 'none';
+    hint.textContent = 'فکر کنم می‌دونم کدومو انتخاب می‌کنی 😼💗';
+  }
+});
+yes.addEventListener('click', () => {
+  questionScreen.style.display = 'none';
+  letterScreen.style.display = 'block';
+  letterScreen.style.animation = 'pop .65s ease both';
+  rainHearts();
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('back').addEventListener('click', () => {
+  letterScreen.style.display = 'none';
+  questionScreen.style.display = 'block';
+  noClicks = 0;
+  no.style.display = '';
+  no.style.opacity = '1';
+  no.style.transform = 'scale(1)';
+  yes.style.transform = 'scale(1)';
+  yes.style.padding = '12px 28px';
+  hint.textContent = 'یه جواب از ته دلت بده کوچولوی من ♡';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
